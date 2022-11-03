@@ -84,7 +84,7 @@ type NamedOnceMutex interface {
 	Unlock(key interface{})
 }
 
-//Logger is used to optionally log requests to the underlying KetStreamerAt
+// Logger is used to optionally log requests to the underlying KetStreamerAt
 type Logger interface {
 	Log(key string, offset, length int64)
 }
@@ -366,7 +366,7 @@ func (stdl stdLogger) Log(key string, offset, length int64) {
 	log.Printf("GET %s off=%d len=%d", key, offset, length)
 }
 
-//StdLogger is a Logger using golang's standard library logger
+// StdLogger is a Logger using golang's standard library logger
 var StdLogger stdLogger
 
 const (
@@ -678,7 +678,7 @@ func (a *Adapter) blockKey(key string, id int64) string {
 
 func (a *Adapter) getBlock(key string, id int64) ([]byte, error) {
 	blockData, ok := a.cache.Get(key, uint(id))
-	if ok {
+	if ok && blockData != nil {
 		return blockData, nil
 	}
 	blockID := a.blockKey(key, id)
