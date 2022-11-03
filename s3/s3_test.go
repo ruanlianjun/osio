@@ -19,8 +19,8 @@ import (
 	"syscall"
 	"testing"
 
-	"github.com/airbusgeo/osio"
 	aws3 "github.com/aws/aws-sdk-go-v2/service/s3"
+	"github.com/ruanlianjun/osio"
 	"github.com/stretchr/testify/assert"
 )
 

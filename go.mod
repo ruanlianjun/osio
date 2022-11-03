@@ -1,4 +1,4 @@
-module github.com/airbusgeo/osio
+module github.com/ruanlianjun/osio
 
 go 1.16
 
